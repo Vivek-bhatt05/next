@@ -1,9 +1,15 @@
- 
+import { useRouter } from "next/router"
 
 const Productid = () => {
+
+    const router = useRouter();
+    // console.log(router)
+    // console.log(router.pathname)
+    // console.log(router.query.productid)
+
   return (
     <div>
-      first product
+      name: {router.query.productid}
     </div>
   )
 }
