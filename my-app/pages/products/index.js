@@ -23,7 +23,13 @@ const Products= () => {
       <ul>
           {products.map((prod)=>(
             <li key={prod.id}>
-             <Link href={`/products/${prod.id}`}>{prod.name}</Link>
+             {/* <Link href={`/products/${prod.id}`}>{prod.name}</Link> */}
+             <Link href={
+              {
+              pathname: '/products/[id]',
+              query:{id:prod.id,name:prod.name}
+             }
+             }>{prod.name}</Link>
             </li>
           ))
         }
