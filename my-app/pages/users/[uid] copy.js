@@ -1,3 +1,4 @@
+
 import { Fragment } from 'react'
 import path from 'path';
 import fs from 'fs'
@@ -13,7 +14,7 @@ const UserdetailPage = (props) => {
   )
 }
 
- function getData(){
+async function getData(){
     const filePath = path.join(process.cwd(),'data','dummy-backend.json')
     const jsonData =  fs.readFileSync(filePath)
     const data= JSON.parse(jsonData)
@@ -37,6 +38,7 @@ export async function getStaticProps(context){
 }
 
 export async function getStaticPaths(){
+    
     const data = await getData();
      const ids = data.users.map((user)=> user.id)
 
